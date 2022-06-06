@@ -29,14 +29,17 @@ print (prudoctOfPair([2, 3, 4, 5, 6]))
 # Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
 def frictPartList (lst):
-    resList = []
-    for number in lst:
-        if type(number) == float:
-            resList.append(round(number%1, 2))
-    return resList
+    return [lst[i] - math.trunc(lst[i]) for i in range(len(lst))]
+    
+    #resList = []
+    #for number in lst:
+    #    if type(number) == float:
+    #        resList.append(round(number%1, 2))
+    #return resList
 
 numbrs = frictPartList([1.1, 1.2, 3.1, 5, 10.01])
 
+print(numbrs)
 print (max(numbrs) - min(numbrs))
 
 # 4. Написать программу преобразования десятичного числа в двоичное
@@ -55,7 +58,7 @@ print(binaryFormat(125))
 Следите за количеством догадок, которые пользователь делает на протяжении всей игры, и сообщите пользователю в конце.'''
 
 # НЕ РЕШИЛ ПОКА, ПРОШУ НЕ ПРОВЕРЯТЬ
-
+'''
 def bullsAndCows (nmr):
     count = 0
     playerNumber = ""
@@ -82,3 +85,5 @@ def bullsAndCows (nmr):
             
 number = random.randint(1000, 9999)
 bullsAndCows(number)
+
+'''
